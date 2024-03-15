@@ -1,0 +1,141 @@
+// Using Anonymous and IIFE
+// 1.a-Printing Odd numbers in array.
+
+// Using Anonymous function to Print Odd Numbers
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbers.forEach(function(number) {
+    if (number % 2 !== 0) {
+        console.log(number);
+    }
+});
+
+
+// Using IIFE to Print Odd Numbers
+const arr=[1,2,3,4,5,6,7,8,9,10];
+(function(){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2!==0){
+            console.log(arr[i])
+
+        }
+    }
+}) ();
+
+
+console.log("---------------");
+
+// 1.b- Convert all the strings to title caps in a string array.
+
+// Using Anonymous Function:
+let stringArray = ["javascript", "hello world", "hyper text markup language"];
+
+let titleCapsArray = stringArray.map(function(str) {
+  return str.toLowerCase().split(' ').map(function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(' ');
+});
+
+console.log(titleCapsArray);
+
+
+// Using IIFE Function:
+let stringArray1 = ["react", "full stack", "devops"];
+
+let titleCapsArray1 = (function(arr) {
+  return arr.map(function(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+  });
+})(stringArray1);
+
+console.log(titleCapsArray1);
+
+console.log("---------------");
+
+
+// 1.c- Sum of all numbers in an array
+
+// Using Anonymous Funtion:
+let sumOfNumbers = [1, 2, 3, 4, 5];
+
+let sumOfAll = sumOfNumbers.reduce(function (acc, num) {
+  return acc + num;
+});
+
+console.log(sumOfAll); 
+
+
+// Using IIFE Function:
+let sumOfNumbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let sumOfAll1 = (function() {
+  return function(arr) {
+    return arr.reduce(function(acc, num) {
+      return acc + num;
+    }, );
+  };
+})()(sumOfNumbers1);
+
+console.log(sumOfAll1);
+
+
+console.log("---------------");
+
+
+// 1.d- Return all the prime numbers in an array
+
+// Using Anonymous Funtion:
+const numbers1 = [1,2,3,4,5,6,7,8,9,10];
+
+const primeNumbers = numbers1.filter(function(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; 
+    }
+  }
+  return num > 1;
+});
+
+console.log("Anonymous Prime Numbers:",primeNumbers);
+
+// Using IIFE Function:
+const numbers2 = [2, 3, 5, 7, 8, 11, 13, 17, 19, 23];
+
+const primeNumbers1 = (function(arr) {
+  return arr.filter(function(num) {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false; // not a prime number
+      }
+    }
+    return num > 1; // prime numbers are greater than 1
+  });
+})(numbers2);
+
+console.log("IIFE Prime Numbers:",primeNumbers1);
+
+
+console.log("---------------");
+
+
+// 1.g- Remove duplicates from an array
+// Using Anonymous Funtion:
+
+const array = [1, 2, 3, 3, 4, 5, 5, 6];
+
+const newArray = array.filter(function(item, index, arr) {
+    return arr.indexOf(item) === index;
+});
+
+console.log("Array without duplicates:", newArray);
+
+
+
+
+
+
+
+    
+
+
