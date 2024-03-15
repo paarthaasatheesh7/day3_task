@@ -1,0 +1,88 @@
+// Using Arrow Function
+// 2.a- Printing odd numbers in an array
+
+let array=[1,2,3,4,5,6,7,8,9,10];
+
+let oddNumbers=arr=>{
+    arr.forEach(num => {
+        if(num%2==!0){
+            console.log(num);
+
+        }
+        
+    });
+};
+oddNumbers(array);
+
+console.log("---------------");
+
+
+// 2.b- Convert all the the string to title caps
+
+let arr = ["java", "python", "bootstrap"];
+
+let titleCapsArray = arr.map(str => {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+});
+
+console.log(titleCapsArray);
+
+console.log("---------------");
+
+
+
+// 2.c- Sum of all numbers in an array
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log("Sum of all numbers:", sum);
+
+
+console.log("---------------");
+
+
+// 2.d - Return all the prime numbers in an array
+let primeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const isPrime = num => {
+    if (num <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+const primeNumbers = numbers.filter(num => isPrime(num));
+
+console.log("Prime numbers:", primeNumbers);
+
+console.log("---------------");
+
+
+
+// 2.e- Return all the Palindromes in an array
+
+const words = ["stats", "radar", "apple", "madam", "banana", "noon", "pop"];
+
+const isPalindrome = str => {
+    const cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    return cleanStr === cleanStr.split('').reverse().join('');
+};
+
+const palindromes = words.filter(word => isPalindrome(word));
+
+console.log("Palindromes:", palindromes);
+
+console.log("---------------");
+
+
+
+
+
+
